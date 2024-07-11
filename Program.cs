@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Product_Inventory_Management_System.Interfaces;
 using Product_Inventory_Management_System.Models;
+using Product_Inventory_Management_System.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -7,6 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("SQLServerIdent
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString)
     );
+builder.Services.AddTransient<IProduct_CRUD, Product_CRUD>();
 var app = builder.Build();
 app.UseRouting();
 app.UseStaticFiles();
