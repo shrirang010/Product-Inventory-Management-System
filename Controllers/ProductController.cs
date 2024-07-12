@@ -30,7 +30,7 @@ namespace Product_Inventory_Management_System.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProduct(int id)
+        public async Task<IActionResult> GetProductAsync(int id)
         {
             Product p = await _product.GetProduct(id);
             if (p == null)

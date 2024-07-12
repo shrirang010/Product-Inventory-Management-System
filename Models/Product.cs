@@ -13,7 +13,8 @@ namespace Product_Inventory_Management_System.Models
         [Required]
         public string Category{ get; set; } = "";
         public decimal Price { get; set; }  
-        public int StockQuantity { get; set; }  
+        public int StockQuantity { get; set; }
+    
 
     }
 }
