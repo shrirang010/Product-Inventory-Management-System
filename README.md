@@ -1,2 +1,68 @@
-# Product-Inventory-Management-System
-Develop a Product Inventory Management System using ASP.NET Core MVC.  This system should manage product data efficiently, incorporating concepts of routing,  database connections, CRUD operations, stored procedures, and Excel file export  functionalities.
+# Product Inventory Management System
+
+The Product Inventory Management System is a web-based application developed using ASP.NET Core MVC to streamline and manage product data efficiently. It incorporates key features such as routing, database connections, CRUD operations, stored procedures, and Excel file export functionalities, ensuring robust and scalable inventory management.
+
+
+
+
+## Tech Stack
+
+**Client:** Html , CSS
+
+**Server:** Dot Net (.NET) Core Framework
+
+## Prerequisite Software Required
+- Visual Studio IDE
+- .NET CORE Version 8 
+
+
+## Required Packages
+- Microsoft.EntityFrameworkCore (8.0.6)
+- Microsoft.EntityFrameworkCore.SQLServer (8.0.6)
+- Microsoft.EntityFrameworkCore.Tools (8.0.6)
+- EPPlus (7.2.1)
+
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Features
+
+CRUD OPERATIONS
+- GET Product LIST  ("/Products")
+- GET Product BY ID ("/Products/{id}")
+- ADD A New Product ("/Products/Create")
+- DELETE A Product  ("/Products/Delete/{id}")
+- UPDATE A Product  ("/Products/Edit/{id}")
+## HTTP METHODS USED
+
+- GET 
+- POST 
+- PUT
+- DELETE
+
+
+## DATABASE Schema
+Microsoft SQL Server was used to Host Database
+
+- Database name : **ProductDB**
+- Tables Count  : 1
+- Table Name    : **Products**
+Columns in Products Table 
+-  ProductID (int, Primary Key, Identity)
+-  Name (nvarchar(100))
+-  Category (nvarchar(100))
+-  Price (decimal)
+-  StockQuantity (int)
+## Installation
+
+
+```bash
+git clone https://github.com/shrirang010/Product-Inventory-Management-System.git
+
+cd Product-Inventory-Management-System
+```
+    
