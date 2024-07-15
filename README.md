@@ -22,13 +22,6 @@ The Product Inventory Management System is a web-based application developed usi
 - Microsoft.EntityFrameworkCore.Tools (8.0.6)
 - EPPlus (7.2.1)
 
-
-
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
 ## Features
 
 CRUD OPERATIONS
@@ -65,4 +58,20 @@ git clone https://github.com/shrirang010/Product-Inventory-Management-System.git
 
 cd Product-Inventory-Management-System
 ```
-    
+
+## Screenshots
+- Get Product List
+![image](https://github.com/user-attachments/assets/b8e15365-3990-4029-a83b-98ad656c01cd)
+
+- Get Product By id
+![image](https://github.com/user-attachments/assets/7729d0ef-e07d-4ae0-be89-6d571ed3efcc)
+
+- Add Product
+  ![image](https://github.com/user-attachments/assets/4e044269-464b-4bb3-8379-d325dee9eaca)
+
+- Delete Product
+![image](https://github.com/user-attachments/assets/ad89c317-c031-4ecb-a7fc-e9760783a129)
+
+- Edit Product
+    ![image](https://github.com/user-attachments/assets/581a04d4-99e9-4366-b120-0afe030f0bba)
+
