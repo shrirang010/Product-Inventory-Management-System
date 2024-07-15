@@ -14,39 +14,33 @@ namespace Product_Inventory_Management_System.Services
             context = appDbcontext;
         }
 
-        public async Task<Product> GetProduct(int id)
+        public async Task<Product> GetProductFromdbAsync(int id)
         {            
-            var p = await context.Products.FindAsync(id);
-            return p;
+            var product = await context.Products.FindAsync(id);
+            return product;
         }
-        public FileResultDto ReadAllProductsFromdb()
+        public FileResultDto GetAllProductsFromdbAsync()
         {
             var products = context.Products.FromSqlRaw("EXEC GetProductList").ToList();
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-
-            // Create an Excel package
             using (var package = new ExcelPackage())
             {
-                // Add a worksheet
-
-                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
-
-                // Add header row
-                worksheet.Cells[1, 1].Value = "ProductID";
-                worksheet.Cells[1, 2].Value = "Name";
-                worksheet.Cells[1, 3].Value = "Category";
-                worksheet.Cells[1, 4].Value = "Price";
-                worksheet.Cells[1, 5].Value = "StockQuantity";
-
-                // Add data rows
-                for (int i = 0; i < products.Count; i++)
+                
+                var worksheet = package.Workbook.Worksheets.Add("Sheet1");                
+                var properties = typeof(Product).GetProperties();
+                
+                for (int col = 0; col < properties.Length; col++)
                 {
-                    worksheet.Cells[i + 2, 1].Value = products[i].ProductID;
-                    worksheet.Cells[i + 2, 2].Value = products[i].Name;
-                    worksheet.Cells[i + 2, 3].Value = products[i].Category;
-                    worksheet.Cells[i + 2, 4].Value = products[i].Price;
-                    worksheet.Cells[i + 2, 5].Value = products[i].StockQuantity;
+                    worksheet.Cells[1, col + 1].Value = properties[col].Name;
+                }
+                
+                for (int row = 0; row < products.Count; row++)
+                {
+                    for (int col = 0; col < properties.Length; col++)
+                    {
+                        worksheet.Cells[row + 2, col + 1].Value = properties[col].GetValue(products[row]);
+                    }
                 }
 
                 var stream = new MemoryStream();
@@ -59,7 +53,7 @@ namespace Product_Inventory_Management_System.Services
                 return new FileResultDto { FileContents = stream.ToArray(), ContentType = contentType, FileName = fileName };
             }
         }
-        public async Task<bool> EditProductTodb(int id, Product updatedproduct)
+        public async Task<bool> EditProductTodbAsync(int id, Product updatedproduct)
         {
             var product = await context.Products.FindAsync(id);
             if (product != null)
@@ -74,7 +68,7 @@ namespace Product_Inventory_Management_System.Services
             return false;
         }
 
-        public async Task<bool> DeleteProductTodb(int id)
+        public async Task<bool> DeleteProductTodbAsync(int id)
         {
             var product = await context.Products.FindAsync(id);
             if (product == null)
