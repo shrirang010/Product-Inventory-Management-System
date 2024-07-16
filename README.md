@@ -1,6 +1,6 @@
 # Product Inventory Management System
 
-The Product Inventory Management System is a web-based application developed using ASP.NET Core MVC to streamline and manage product data efficiently. It incorporates key features such as routing, database connections, CRUD operations, stored procedures, and Excel file export functionalities, ensuring robust and scalable inventory management.
+The Product Inventory Management System is a web-based application developed using ASP.NET Core to streamline and manage product data efficiently. It incorporates key features such as routing, database connections, CRUD operations, stored procedures, and Excel file export functionalities, ensuring robust and scalable inventory management.
 
 
 
