@@ -1,6 +1,6 @@
 # Product Inventory Management System
 
-The Product Inventory Management System is a web-based application developed using ASP.NET Core MVC to streamline and manage product data efficiently. It incorporates key features such as routing, database connections, CRUD operations, stored procedures, and Excel file export functionalities, ensuring robust and scalable inventory management.
+The Product Inventory Management System is a web-based application developed using ASP.NET Core to streamline and manage product data efficiently. It incorporates key features such as routing, database connections, CRUD operations, stored procedures, and Excel file export functionalities, ensuring robust and scalable inventory management.
 
 
 
@@ -25,12 +25,13 @@ The Product Inventory Management System is a web-based application developed usi
 ## Features
 
 CRUD OPERATIONS
-- GET Product LIST  ("/Products")
-- GET Product BY ID ("/Products/{id}")
-- ADD A New Product ("/Products/Create")
-- DELETE A Product  ("/Products/Delete/{id}")
-- UPDATE A Product  ("/Products/Edit/{id}")
-## HTTP METHODS USED
+- GET Product List   **/Products** 
+- GET Product By Id  **/Products/{id}** 
+- ADD a New Product  **/Products/Create** 
+- DELETE a Product   **/Products/Delete/{id}** 
+- UPDATE a Product  **/Products/Edit/{id}** 
+
+## Http Methods Used
 
 - GET 
 - POST 
@@ -38,18 +39,19 @@ CRUD OPERATIONS
 - DELETE
 
 
-## DATABASE Schema
+## Database Schema
 Microsoft SQL Server was used to Host Database
 
 - Database name : **ProductDB**
 - Tables Count  : 1
 - Table Name    : **Products**
-Columns in Products Table 
-    ProductID (int, Primary Key, Identity)
-    Name (nvarchar(100))
-    Category (nvarchar(100))
-    Price (decimal)
-    StockQuantity (int)
+
+- Columns in Products Table
+    - ProductID (int, Primary Key, Identity)
+    - Name (nvarchar(100))
+    - Category (nvarchar(100))
+    - Price (decimal)
+    - StockQuantity (int)
 ## Installation
 
 
