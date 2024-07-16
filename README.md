@@ -44,12 +44,13 @@ Microsoft SQL Server was used to Host Database
 - Database name : **ProductDB**
 - Tables Count  : 1
 - Table Name    : **Products**
-Columns in Products Table 
-    ProductID (int, Primary Key, Identity)
-    Name (nvarchar(100))
-    Category (nvarchar(100))
-    Price (decimal)
-    StockQuantity (int)
+
+- Columns in Products Table
+    - ProductID (int, Primary Key, Identity)
+    - Name (nvarchar(100))
+    - Category (nvarchar(100))
+    - Price (decimal)
+    - StockQuantity (int)
 ## Installation
 
 
