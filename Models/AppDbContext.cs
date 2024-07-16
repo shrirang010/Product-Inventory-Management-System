@@ -12,9 +12,9 @@ namespace Product_Inventory_Management_System.Models
 
         }
           protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+          {
             base.OnModelCreating(modelBuilder);
-        }
+          }
      
     }
 }

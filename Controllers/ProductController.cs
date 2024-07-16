@@ -7,6 +7,7 @@ using System.IO;
 using OfficeOpenXml.Style;
 using Product_Inventory_Management_System.Models;
 using Product_Inventory_Management_System.Interfaces;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace Product_Inventory_Management_System.Controllers
 {
@@ -24,6 +25,7 @@ namespace Product_Inventory_Management_System.Controllers
         }
 
         // ---- Get All Products ----------------------
+
         [HttpGet("")]
         public IActionResult GetProductList()
         {
@@ -42,6 +44,7 @@ namespace Product_Inventory_Management_System.Controllers
         }
 
         // ---- Get a Product by id --------------------
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductAsync(int id)
         {
@@ -64,6 +67,7 @@ namespace Product_Inventory_Management_System.Controllers
         }
 
         // ----Add A new Product -----
+
         [HttpPost("Create")]
         public  IActionResult AddProduct([FromBody]Product product)
         {
@@ -83,7 +87,7 @@ namespace Product_Inventory_Management_System.Controllers
                 }
                 _product.AddProductTodb(product);
                 _logger.LogInformation("Create Product Successfull");
-                return StatusCode(200, Content("Product Successfully Created", "application/text"));
+                return Ok("Product Successfully Created");
             }
             catch (Exception ex)
             {
@@ -94,6 +98,7 @@ namespace Product_Inventory_Management_System.Controllers
         }
 
         // ----Edit A Product By id ------
+
         [HttpPut("Edit/{id}")]
         public async Task<IActionResult> EditProductAsync(int id,[FromBody]Product updatedproduct)
         {
@@ -103,9 +108,9 @@ namespace Product_Inventory_Management_System.Controllers
                 bool value = await _product.EditProductTodbAsync(id, updatedproduct);
                 if (value)
                 {
-                    return StatusCode(200, Content($"Succesfully Edited Product with id {id}", "application/text"));
+                    _logger.LogInformation("Edit Product Successfull");
+                    return Ok($"Succesfully Edited Product with id { id}");
                 }
-                _logger.LogInformation("Edit Product Successfull");
                 return StatusCode(404);
             }
             catch (Exception ex) 
@@ -116,6 +121,7 @@ namespace Product_Inventory_Management_System.Controllers
         }
 
         // ---- Delete A Product By id ------
+
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteProductAsync(int id)
         {
@@ -125,9 +131,9 @@ namespace Product_Inventory_Management_System.Controllers
                 bool value = await _product.DeleteProductTodbAsync(id);
                 if (value)
                 {
-                    return StatusCode(200, Content($"The Product with id {id} has been successfully Deleted", "application/text"));
+                    _logger.LogInformation("Delete Product Successfull");
+                    return Ok($"The Product with id {id} has been successfully Deleted");                    
                 }
-                _logger.LogInformation("Delete Product Successfull");
                 return StatusCode(404);
             }
             catch (Exception ex)
@@ -138,6 +144,7 @@ namespace Product_Inventory_Management_System.Controllers
         }
 
         // -------FRONTEND (RENDER VIEWS)----------
+
         [HttpGet]
         [Route("Create")]
         public IActionResult Create()
