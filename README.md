@@ -25,11 +25,11 @@ The Product Inventory Management System is a web-based application developed usi
 ## Features
 
 CRUD OPERATIONS
-- GET Product LIST  ("/Products")
-- GET Product BY ID ("/Products/{id}")
-- ADD A New Product ("/Products/Create")
-- DELETE A Product  ("/Products/Delete/{id}")
-- UPDATE A Product  ("/Products/Edit/{id}")
+- GET Product List  ("/Products")
+- GET Product By Id ("/Products/{id}")
+- ADD a New Product ("/Products/Create")
+- DELETE a Product  ("/Products/Delete/{id}")
+- UPDATE a Product  ("/Products/Edit/{id}")
 ## HTTP METHODS USED
 
 - GET 
