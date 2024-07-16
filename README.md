@@ -30,7 +30,8 @@ CRUD OPERATIONS
 - ADD a New Product ("/Products/Create")
 - DELETE a Product  ("/Products/Delete/{id}")
 - UPDATE a Product  ("/Products/Edit/{id}")
-## HTTP METHODS USED
+
+## Http Methods Used
 
 - GET 
 - POST 
@@ -38,7 +39,7 @@ CRUD OPERATIONS
 - DELETE
 
 
-## DATABASE Schema
+## Database Schema
 Microsoft SQL Server was used to Host Database
 
 - Database name : **ProductDB**
